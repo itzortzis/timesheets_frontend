@@ -1,6 +1,7 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { Api } from './services/api';
 
 interface MonthInfo {
   day: number;
@@ -28,6 +29,8 @@ export class App {
   currentMonthId = 'test';
   currentMaxDays = 30;
   globalError = 'Οι ώρες δεν έχουν προστεθεί σωστά.';
+  response_related_issue = true;
+  response_issue = "";
 
   months = [
     {
@@ -168,6 +171,8 @@ export class App {
     }
   ];
 
+  constructor(private apiService: Api) {}
+
 
   handleMonthSelection(event: Event): void {
     this.currentMonthInfo = [];
@@ -287,8 +292,67 @@ export class App {
       "year": 2025
     };
 
+    var mes = "";
     console.log(info);
+    this.apiService.postJsonData(
+      'http://melina.ispatial.survey.ntua.gr:8201/process',
+      info).subscribe({
+        next: (response) => {
+          console.log(response.filepath);
+          if (response.status == "success") {
+            this.response_related_issue = false;
+            this.downoladCSV(response.filepath);
+            mes = "Επιτυχία! Επιλέξτε 'ΟΚ' για να κατεβάσετε το αρχείο σας.";
+          } else {
+            this.response_related_issue = true;
+            mes = "Αποτυχία!" + " " + "Ελέγξτε τις ώρες και το διάστημα";
+          }
+          
+          alert(mes);
+          this.response_issue = response.message;
+          
+          console.log('Post successful!', response);
+        },
+        error: (error) => {
+          console.error('POST error:', error);
+          // this.responseMessage = null; 
+        }
+      });
+
     
+  
+    
+  }
+
+
+
+  downoladCSV(filepath: string) {
+    const info = {
+      "filepath": filepath
+    }
+    this.apiService.downloadCsv(
+        'http://melina.ispatial.survey.ntua.gr:8201/download', 
+        info
+      ).subscribe({
+        next: (blob: Blob) => {
+          const url = window.URL.createObjectURL(blob);
+          
+          const a = document.createElement('a');
+          a.style.display = 'none';
+          document.body.appendChild(a);
+          
+          a.href = url;
+          a.download = `report.csv`; 
+
+          a.click();
+          
+          window.URL.revokeObjectURL(url);
+          document.body.removeChild(a);
+        },
+        error: (err) => {
+          console.error('Error during CSV download:', err);
+        }
+      });
   }
 
   
