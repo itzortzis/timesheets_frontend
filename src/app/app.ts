@@ -39,7 +39,7 @@ export class App {
       "month_gr1": "Ιανουαρίου",
       "month_en": "January",
       "days": 31,
-      "holidays_or_weekends": [1,4,5,6,11,12,18,19,25,26]
+      "holidays_or_weekends": [1,3,4,6,10,11,17,18,24,25,31]
     },
     {
       "month_gr": "Φεβρουάριος",
@@ -47,7 +47,7 @@ export class App {
       "month_gr1": "Φεβρουαρίου",
       "month_en": "February",
       "days": 28,
-      "holidays_or_weekends": [1,2,8,9,15,16,22,23]
+      "holidays_or_weekends": [1,7,8,14,15,21,22,23,28]
     },
     {
       "month_gr": "Μάρτιος",
@@ -55,7 +55,7 @@ export class App {
       "month_gr1": "Μαρτίου",
       "month_en": "March",
       "days": 31,
-      "holidays_or_weekends": [1,2,3,8,9,15,16,22,23,25,29,30]
+      "holidays_or_weekends": [1,7,8,14,15,21,22,25,28,29]
     },
     {
       "month_gr": "Απρίλιος",
@@ -63,7 +63,7 @@ export class App {
       "month_gr1": "Απριλίου",
       "month_en": "April",
       "days": 30,
-      "holidays_or_weekends": [5,6,12,13,18,19,20,21,26,27]
+      "holidays_or_weekends": [4,5,10,11,12,13,18,19,25,26]
     },
     {
       "month_gr": "Μάιος",
@@ -71,7 +71,7 @@ export class App {
       "month_gr1": "Μαΐου",
       "month_en": "May",
       "days": 31,
-      "holidays_or_weekends": [3,4,10,11,17,18,24,25,31]
+      "holidays_or_weekends": [1,2,3,9,10,16,17,23,24,30,31]
     },
     {
       "month_gr": "Ιούνιος",
@@ -79,7 +79,7 @@ export class App {
       "month_gr1": "Ιουνίου",
       "month_en": "June",
       "days": 30,
-      "holidays_or_weekends": [1,7,8,9,14,15,21,22,28,29]
+      "holidays_or_weekends": [1,6,7,13,14,20,21,27,28]
     },
     {
       "month_gr": "Ιούλιος",
@@ -87,7 +87,7 @@ export class App {
       "month_gr1": "Ιουλίου",
       "month_en": "July",
       "days": 31,
-      "holidays_or_weekends": [5,6,12,13,19,20,26,27]
+      "holidays_or_weekends": [4,5,11,12,18,19,25,26]
     },
     {
       "month_gr": "Αύγουστος",
@@ -95,7 +95,7 @@ export class App {
       "month_gr1": "Αυγούστου",
       "month_en": "August",
       "days": 31,
-      "holidays_or_weekends": [2,3,9,10,16,17,23,24,30,31,15]
+      "holidays_or_weekends": [1,2,8,9,15,16,22,23,29,30]
     },
     {
       "month_gr": "Σεπτέμβριος",
@@ -103,7 +103,7 @@ export class App {
       "month_gr1": "Σεπτεμβρίου",
       "month_en": "September",
       "days": 30,
-      "holidays_or_weekends": [6,7,13,14,20,21,27,28]
+      "holidays_or_weekends": [5,6,12,13,19,20,26,27]
     },
     {
       "month_gr": "Οκτώβριος",
@@ -111,7 +111,7 @@ export class App {
       "month_gr1": "Οκτωβρίου",
       "month_en": "October",
       "days": 31,
-      "holidays_or_weekends": [4,5,11,12,18,19,25,26,28]
+      "holidays_or_weekends": [3,4,10,11,17,18,24,25,28,31]
     },
     {
       "month_gr": "Νοέμβριος",
@@ -119,7 +119,7 @@ export class App {
       "month_gr1": "Νοεμβρίου",
       "month_en": "November",
       "days": 30,
-      "holidays_or_weekends": [1,2,8,9,15,16,22,23,29,30]
+      "holidays_or_weekends": [1,7,8,14,15,21,22,28,29]
     },
     {
       "month_gr": "Δεκέμβριος",
@@ -127,7 +127,7 @@ export class App {
       "month_gr1": "Δεκεμβρίου",
       "month_en": "December",
       "days": 31,
-      "holidays_or_weekends": [6,7,13,14,20,21,25,26,27,28]
+      "holidays_or_weekends": [5,6,12,13,19,20,25,26,27]
     }
   ];
 
